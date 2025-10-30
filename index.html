@@ -18,12 +18,27 @@ a{text-decoration:none;}
 </head>
 <body style="margin:0;background:#0C0C0F;">
 <center style="width:100%;background:#0C0C0F;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
-         style="background:#0C0C0F url('https://raw.githubusercontent.com/MiracleRaverMango/risque-email-template/main/risque_bg.jpg') center top / 600px 1500px no-repeat;">
-    <tr><td align="center">
+  <!-- OUTER WRAPPER: full-width, solid black only (no bg image here) -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0C0C0F">
+  <tr>
+    <td align="center" style="padding:0;">
 
-      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="container"
-             style="width:600px;margin:auto;">
+      <!-- 600px CONTAINER with background image (Yahoo uses `background` attr) -->
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"
+             background="https://raw.githubusercontent.com/MiracleRaverMango/risque-email-template/main/risque_bg.png"
+             style="width:600px;margin:0 auto;
+                    background-image:url('https://raw.githubusercontent.com/MiracleRaverMango/risque-email-template/main/risque_bg.png');
+                    background-repeat:no-repeat;background-position:center top;">
+
+        <!--[if gte mso 9]>
+        <!-- VML rectangle: locks bg to exactly 600x1500 for Outlook/Yahoo -->
+        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false"
+                style="width:600px;height:1500px;">
+          <v:fill type="frame"
+                  src="https://raw.githubusercontent.com/MiracleRaverMango/risque-email-template/main/risque_bg.png"
+                  color="#0C0C0F"/>
+          <v:textbox inset="0,0,0,0">
+        <![endif]-->
 
        <!-- HEADER (true 120px height, centered logo, right subtext) -->
 <tr>
@@ -157,8 +172,14 @@ a{text-decoration:none;}
             </p>
           </td>
         </tr>
-
-      </table>
+<!--[if gte mso 9]>
+          </v:textbox>
+        </v:rect>
+        <![endif]-->
+      </table> <!-- end 600px background container -->
+    </td>
+  </tr>
+</table> <!-- end outer wrapper -->
     </td></tr>
   </table>
 </center>
